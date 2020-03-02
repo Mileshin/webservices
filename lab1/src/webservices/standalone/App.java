@@ -1,4 +1,4 @@
-package webservices;
+package webservices.standalone;
 
 import javax.xml.ws.Endpoint;
 
