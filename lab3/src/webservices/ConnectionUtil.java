@@ -8,8 +8,8 @@ import java.util.logging.Logger;
 
 public class ConnectionUtil {
     private static final String JDBC_URL = "jdbc:postgresql://localhost:5432/ifmo-ws";
-    private static final String JDBC_USER = "ifmo-ws";
-    private static final String JDBC_PASSWORD = "ifmo-ws";
+    private static final String JDBC_USER = "andrey";
+    private static final String JDBC_PASSWORD = "password";
 
     static {
         try {
