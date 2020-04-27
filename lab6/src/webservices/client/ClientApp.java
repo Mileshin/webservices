@@ -23,6 +23,7 @@ public class ClientApp {
         Client client = Client.create();
         String method = (args.length > 0) ? args[0] : "default";
 
+        authMenu();
         switch (method) {
             case createMethodName: {
                 checkParamsLength(args, 6);
@@ -62,6 +63,32 @@ public class ClientApp {
                         createMethodName + ", " + readMethodName + ", " + updateMethodName + " or " + deleteMethodName);
                 System.exit(1);
                 break;
+            }
+        }
+    }
+
+    private void authMenu() throws IOException {
+        boolean flag = true;
+        System.out.println("Choose one of service");
+        while (flag) {
+            System.out.println("1. Sign in");
+            System.out.println("2. Exit");
+            System.out.print("Print number: ");
+            String type = input.readLine();
+            switch (type) {
+                case "1":
+                    System.out.println("Enter username");
+                    username = input.readLine();
+                    System.out.println("Enter password");
+                    password = input.readLine();
+                    encodeAuthValue = encodeCredits();
+                    crudMenu();
+                    break;
+                case "2":
+                    flag = false;
+                    break;
+                default:
+                    again();
             }
         }
     }

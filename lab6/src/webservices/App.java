@@ -16,6 +16,7 @@ public class App {
         System.out.println("starting server on " + BASE_URI);
         try {
             ResourceConfig resourceConfig = new PackagesResourceConfig(CityResource.class.getPackage().getName());
+            resourceConfig.getProperties().put("com.sun.jersey.spi.container.ContainerRequestFilters", "com.wishmaster.ifmo.ws.jaxws.AuthFilter");
             server = GrizzlyServerFactory.createHttpServer(BASE_URI, resourceConfig);
             server.start();
             System.in.read();
